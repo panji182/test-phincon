@@ -1,0 +1,60 @@
+
+.header-pc {
+  .navBar {
+    display: flex
+  }
+}
+
+.header-mobile {
+  display: none;
+  position: fixed;
+  background: #fff;
+  z-index: 999;
+  box-shadow: 1px 2px 9px 2px rgba(0,0,0,0.32);
+  -webkit-box-shadow: 1px 2px 9px 2px rgba(0,0,0,0.32);
+  -moz-box-shadow: 1px 2px 9px 2px rgba(0,0,0,0.32);
+  width: 100%;
+  bottom: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.inputGroup {
+  height: 40px;
+  justify-content: flex-end;
+
+  span {
+    background-color: #fff;
+    border: 0;
+  }
+}
+
+.inputGroupActive {
+  width: 20%;
+  height: 40px;
+
+  span {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .header-pc {
+    .menuBar {
+      display: none
+    }
+  }
+
+  .header-mobile {
+    display: block;
+
+    .navBar {
+      display: none
+    }
+  }
+
+  .inputGroupActive {
+    width: 40%;
+  }
+}

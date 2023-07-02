@@ -11,14 +11,14 @@ import cx from 'classnames';
 // import { getData } from '@/api/api'
 import styles from "./styles.module.scss"
 
-const Header = dynamic(() => import('@/components/Header'));
+import Header from '@/app/components/Header';
 
 const Home = () => {
   return (
     <>
       <Container>
         <Header />
-        <div className={cx("p-2", "mb-3")}><Image src="/assets/icons/left-nav-button.png" width={36} height={37} alt="nav-button" /></div>
+        <Header isMobile={true} />
         <InputGroup className="mb-3">
           <InputGroup.Text id="search"><FiSearch /></InputGroup.Text>
           <Form.Control

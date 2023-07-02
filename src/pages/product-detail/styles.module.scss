@@ -1,0 +1,16 @@
+
+.itemBlock {
+  line-height: 17px;
+}
+
+.wishlistInsidePict {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+@media screen and (max-width: 376px) {
+  .wishlistInsidePict {
+    right: 21%;
+  }
+}

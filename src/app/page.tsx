@@ -1,8 +1,7 @@
 // import styles from './page.module.css'
-// import Home from '@/pages/home'
-import About from '@/pages/About'
-import CategoryDetail from '@/pages/category-detail';
+// import CategoryDetail from "@/pages/category-detail";
+import ProductDetail from "@/pages/product-detail";
 
-export default function App() {
-  return <CategoryDetail />;
+export default function Page() {
+  return <ProductDetail />;
 }

@@ -1,0 +1,23 @@
+
+.imageBox {
+  width: 155px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.wishlistBlock {
+  position: absolute;
+  width: 21px;
+  top: 5%;
+  right: 10%;
+
+  img {
+    cursor: pointer;
+  }
+}
+
+.itemBlock {
+  text-align: center;
+  line-height: 17px;
+}

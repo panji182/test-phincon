@@ -1,0 +1,97 @@
+
+$font-family: Arial, Helvetica, sans-serif;
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$font-size-price: 18px;
+$font-size-title: 20px;
+
+$color-base: #000;
+$color-secondary: #8c8c8c;
+
+body {
+  font-family: $font-family !important;
+}
+
+.text-sm {
+  font-size: $font-size-sm;
+}
+
+.text-md {
+  font-size: $font-size-md;
+}
+
+.text-lg {
+  font-size: $font-size-lg;
+}
+
+.text-price {
+  font-size: $font-size-price;
+}
+
+.text-title {
+  font-size: $font-size-title;
+}
+
+.text-color-base {
+  color: $color-base;
+}
+
+.text-color-secondary {
+  color: $color-secondary;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.stack-space-between {
+  justify-content: space-between;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.borderRadius20 {
+  border-radius: 20px;
+}
+
+.carousel-indicators  {
+
+  [type=button] {
+    display: grid;
+    place-content: center;
+    color: #fff;
+    border-radius: 50%;
+    border: none;
+    width: 1.15em;
+    height: 1.15em;
+    transform: translateY(-0.075em);
+    background-color: transparent;
+    opacity: 1;
+
+    &:before {
+      content: "";
+      width: 0.65em;
+      height: 0.65em;
+      border-radius: 50%;
+      transform: scale(1);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset 1em 1em white;
+    }
+  }
+
+  [type=button][aria-current=true] {
+    border: 1px solid #fff;
+  }
+
+}
+
+.carousel-item {
+  text-align: center;
+}
