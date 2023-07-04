@@ -61,6 +61,10 @@ body {
   border-radius: 20px;
 }
 
+.lineHeight17 {
+  line-height: 17px;
+}
+
 .carousel-indicators  {
 
   [type=button] {
@@ -94,4 +98,17 @@ body {
 
 .carousel-item {
   text-align: center;
+}
+
+@media screen and (max-width: 376px) {
+
+  .text-lg {
+    font-size: $font-size-sm;
+  }
+
+  .carousel-item {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
 }
