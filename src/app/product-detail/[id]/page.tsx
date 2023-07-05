@@ -68,7 +68,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
         const tmp = [...prevState];
         tmp[currentProductIndex] = {
           ...tmp[currentProductIndex],
-          quantity: tmp[currentProductIndex].quantity + selectedCount
+          quantity: selectedCount
         };
         updateCart({
           userId: 3, //default user
@@ -93,7 +93,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
   const handleUpdateCart = (action: string) => {
     setSelectedCount((prevState: number) => {
       const currentQuantity = action === "addition" ? prevState + 1 : prevState - 1;
-      return currentQuantity;
+      return currentQuantity > -1 ? currentQuantity : 0;
     });
   }
 
