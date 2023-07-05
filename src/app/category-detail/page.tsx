@@ -1,22 +1,45 @@
 "use client"
-import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import styles from "./styles.module.scss"
 import cx from "classnames"
+import Skeleton from 'react-loading-skeleton'
+import { useGetAllProductsQuery } from '@/services/fakeStore';
 
 import Header from '@/app/components/Header';
 
 const CategoryDetail = () => {
+  const router = useRouter();
+  const allProductsQuery = useGetAllProductsQuery({ category: "" });
+  const allProductsData = allProductsQuery?.data || [];
+
+  const handleGetDetailProduct = (id: number) => {
+    router.push(`/product-detail/${id}`);
+  }
+
   return (
     <Container>
       <Header />
       <Header isMobile={true} />
       <h3 className="text-bold">Clothes</h3>
       <Row className="pb-5">
-        <Col xs="6" sm="6" md="3" lg="3">
+        {!allProductsQuery.isLoading ? allProductsData.map((item, index) => (
+          <Col key={index} xs="6" sm="6" md="3" lg="3" onClick={() => handleGetDetailProduct(item.id)}>
+            <div className={cx(styles.imageBox, "position-relative")}>
+              <div className={styles.wishlistBlock}><Image src="/assets/icons/wishlist.png" width={21} height={22} alt="wishlist" /></div>
+              <Image src={item.image} width={155} height={172} alt="item" />
+            </div>
+            <div className={cx("p-3", styles.itemBlock)}>
+              <span className="text-md text-color-base text-bold">{item.title}</span><br />
+              <span className="text-md text-color-secondary">{item.category}</span><br />
+              <span className="text-md text-color-price text-bold">${item.price}</span>
+            </div>
+          </Col>
+        )) : <Skeleton count={5} />}
+        {/* <Col xs="6" sm="6" md="3" lg="3">
           <div className={cx(styles.imageBox, "position-relative")}>
             <div className={styles.wishlistBlock}><Image src="/assets/icons/wishlist.png" width={21} height={22} alt="wishlist" /></div>
             <Image src="/assets/Item-clothes-1.png" width={155} height={172} alt="item" />
@@ -59,7 +82,7 @@ const CategoryDetail = () => {
             <span className="text-md text-color-secondary">Giselle Top In White Linen</span><br />
             <span className="text-md text-color-price text-bold">$69.50</span>
           </div>
-        </Col>
+        </Col> */}
       </Row>
     </Container>
   )

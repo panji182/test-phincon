@@ -1,0 +1,40 @@
+
+.paymentWrap {
+  justify-content: space-between;
+  border-radius: 20px;
+  box-shadow: -2px 0px 32px 1px rgba(0,0,0,0.3);
+  -webkit-box-shadow: -2px 0px 32px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: -2px 0px 32px 1px rgba(0,0,0,0.3);
+}
+
+.paymentWrapSelected {
+  justify-content: space-between;
+  background-color: #000;
+  border-radius: 20px;
+
+  span {
+    color: #fff;
+  }
+  .circleSelector {
+    border: 1px solid #fff;
+  }
+}
+
+.circleSelector {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.paymentWrapAdd {
+  justify-content: center;
+  border-radius: 20px;
+  border: 1px dashed #dedede;
+
+  .buttonAddCard {
+    flex: 0;
+    border-radius: 50%;
+    border: 1px solid #dedede;
+  }
+}
